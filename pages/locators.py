@@ -18,3 +18,10 @@ class ProductPageLocators:
     BOOK_NAME = (By.CSS_SELECTOR, "h1:nth-child(1)")
 
 
+class BasePageLocators:
+    LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
+    LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
+    VIEW_BASKET = (By.CSS_SELECTOR, ".basket-mini .btn")
+    EMPTY_BASKET_TEXT = (By.CSS_SELECTOR, "#content_inner > p")
+    PRODUCTS_PRESENTS_ON_THE_BASKET_PAGE = (By.CSS_SELECTOR, ".basket-items")
+

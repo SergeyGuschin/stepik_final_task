@@ -17,3 +17,13 @@ class ProductPage(BasePage):
         book_price_on_the_page = self.browser.find_element(*ProductPageLocators.BOOK_PRICE).text
         basket_total_price_message = self.browser.find_element(*ProductPageLocators.BASKET_TOTAL_PRICE_MESSAGE).text
         assert basket_total_price_message == book_price_on_the_page, "Basket total price does not match product price"
+
+    def should_not_be_success_message(self):
+        assert self.is_not_element_present(*ProductPageLocators.ADDED_TO_YOUR_BASKET_SUCCES_MESSAGE), \
+            "Success message is presented, but should not be"
+
+    def should_be_disappeared_success_message(self):
+        assert self.is_disappeared(*ProductPageLocators.ADDED_TO_YOUR_BASKET_SUCCES_MESSAGE), \
+            "Success message is presented, but should be disappeared"
+
+
