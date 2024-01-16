@@ -1,1 +1,2 @@
-# stepik_final_task
+# Курс "Автоматизация тестирования с помощью Selenium и Python" на Stepik https://stepik.org/course/575
+Финальное задание - полноценный тестовый проект. 

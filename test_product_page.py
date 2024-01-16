@@ -28,6 +28,7 @@ class TestUserAddToBasketFromProductPage:
         page.open()
         page.should_not_be_success_message()
 
+    @pytest.mark.need_review
     def test_user_can_add_product_to_basket(self, browser):
         page = ProductPage(browser, link)
         page.open()
@@ -35,6 +36,16 @@ class TestUserAddToBasketFromProductPage:
         page.solve_quiz_and_get_code()
         page.should_be_added_to_cart_book_message()
         page.should_be_total_basket_price_message()
+
+
+@pytest.mark.need_review
+def test_guest_can_add_product_to_basket(browser):
+    page = ProductPage(browser, link)
+    page.open()
+    page.click_add_to_cart()
+    page.solve_quiz_and_get_code()
+    page.should_be_added_to_cart_book_message()
+    page.should_be_total_basket_price_message()
 
 
 @pytest.mark.xfail
@@ -61,6 +72,7 @@ def test_guest_should_see_login_link_on_product_page(browser):
     page.should_be_login_link()
 
 
+@pytest.mark.need_review
 def test_guest_can_go_to_login_page_from_product_page(browser):
     page = ProductPage(browser, link)
     page.open()  # открываем страницу
@@ -69,6 +81,7 @@ def test_guest_can_go_to_login_page_from_product_page(browser):
     login_page.should_be_login_page()
 
 
+@pytest.mark.need_review
 def test_guest_cant_see_product_in_basket_opened_from_product_page(browser):
     page = ProductPage(browser, link)
     page.open()
