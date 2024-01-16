@@ -21,6 +21,7 @@ def browser(request):
     # Chrome options тест
     options = Options()
     options.add_experimental_option('prefs', {'intl.accept_languages': user_language})
+    options.add_experimental_option('excludeSwitches', ['enable-logging'])
 
     # Firefox options and service
     # Опции для Firefox модифицированы так чтобы браузер смог запускаться на Ubuntu где стоит snap программа.
